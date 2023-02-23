@@ -16,25 +16,53 @@ class MyApp extends StatelessWidget {
       ),
       home: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.black45,
           body: Column(
             children: [
-              Container(
-                color: Colors.brown,
-                height: 250.0,
-                child: Expanded(
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(23.0),
                   child: Column(
                     children: [
-                      const Text('aaabalance'),
-                      const Text('555'),
                       Row(
-                        children: const [Text('+22'), Text('UP')],
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            'Total price',
+                            style:
+                                TextStyle(color: Colors.blueGrey, fontSize: 28),
+                          ),
+                          Icon(
+                            Icons.currency_bitcoin,
+                            color: Colors.blueGrey,
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       Row(
-                        children: [
-                          ElevatedButton(
-                              onPressed: (() {}), child: const Text('buy')),
-                          ElevatedButton(
-                              onPressed: (() {}), child: const Text('sell'))
+                        children: const [
+                          Text(
+                            '100 \$',
+                            style:
+                                TextStyle(color: Colors.blueGrey, fontSize: 50),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Text(
+                            'aaa \$',
+                            style:
+                                TextStyle(color: Colors.blueGrey, fontSize: 30),
+                          ),
+                          Text(
+                            'bbb \$',
+                            style:
+                                TextStyle(color: Colors.blueGrey, fontSize: 30),
+                          ),
                         ],
                       )
                     ],
@@ -42,8 +70,14 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Expanded(
+                flex: 6,
                 child: Container(
-                  color: Colors.grey,
+                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                  decoration: const BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          topLeft: Radius.circular(20))),
                 ),
               ),
             ],
